@@ -436,6 +436,15 @@
         <artifactId>maven-jar-plugin</artifactId>
         <executions>
           <execution>
+            <id>default-jar</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+            <configuration>
+              <skipIfEmpty>true</skipIfEmpty>
+            </configuration>
+          </execution>
+          <execution>
             <id>test-jar</id>
             <!-- Move test-jar to verify phase, because integration-test may generate test resources -->
             <phase>verify</phase>
