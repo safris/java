@@ -85,6 +85,18 @@
       </properties>
     </profile>
     <profile>
+      <id>skipTests</id>
+      <activation>
+        <property>
+          <name>skipTests</name>
+        </property>
+      </activation>
+      <properties>
+        <skipITests>true</skipITests>
+        <skipRTests>true</skipRTests>
+      </properties>
+    </profile>
+    <profile>
       <id>!skipITests</id>
       <activation>
         <property>
