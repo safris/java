@@ -17,7 +17,7 @@ language: java
 jdk:
 - oraclejdk8
 install:
-- cp settings.xml $HOME/.m2/settings.xml
+- cp settings.xml $HOME/.m2/settings.xml && rm -rf ~/.m2/repository/org/safris/maven
 script:
 - 'if [ "$TRAVIS_BRANCH" = "master" ] &&
       [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
@@ -26,6 +26,9 @@ script:
   else
     mvn -e install;
   fi'
+cache:
+  directories:
+    - ~/.m2/repository
 env:
   global:
   - secure: rtuVoX801HTkjjqrBzZTeVbZ+SGC8+Y/XJrpjR9qImxdGGdaxP+hYFoj6kY/eYH7Z8ajTRKvLCdEmQ/CHa94GTJwlCRoVyjyO9qZ3nK+QN5AJbUqkZ2un5QTmrcT5f07A+v6v6rslv+FdmAJqhs5VTiFjJ3AuKhtxOcWQKFqJQmOGV3M/lVX3JQM91cyiFuzqPnJWrwOm6rcTNb4IwEtMKYbc75tR2aYgdxvbkmrXyByLIV5KGCVcbMomOtCOqXj+dCbS40WNasaI/+HbQXdVQUa4TWEkcmtdy/VV6IRbhXtp9tYNC+OyNcu5ZSsZBbo8IVEKrLvNgS33t3CspUBJ0ax5if0VEFo/e/GZVkeVn+BjAclnIthcbwhrrW+bMT3SuR+ATxyD8AAjzSYuUmoZwRepMC5/U/Bn/XyhpVnk0Sr9fyAn7jlFzsnHr9obWVxMhHOvJ2V0SWBg8kQA7Fe9djTGlRrMGxYSog2zWdUAH8nU0V4fsaNalTda2FyxUzpajDfHvBEuxl7sMGRdBYJ4LLmZIDkKIsB33a5WeROg8S7pVFEsSyM9QQ/vtJ8zVlPzKEPqNEeZo+ZkSw2S979Uq2nMWzQIvfcgwArTckYdLr3jJ5ECpTm75SqN6xS4PEQgRfb5gPaIcx1gFznGLTfX7Vt+VxUVDejEX5zJjm22U0=
