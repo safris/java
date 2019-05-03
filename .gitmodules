@@ -1,0 +1,15 @@
+[submodule "jaxdb"]
+	path = jaxdb
+	url = git@github.com:jaxdb/jaxdb.git
+[submodule "jaxsb"]
+	path = jaxsb
+	url = git@github.com:jaxsb/jaxsb.git
+[submodule "jetrs"]
+	path = jetrs
+	url = git@github.com:jetrs/jetrs.git
+[submodule "jsonx"]
+	path = jsonx
+	url = git@github.com:jsonxorg/jsonx.git
+[submodule "openjax"]
+	path = openjax
+	url = git@github.com:openjax/openjax.git

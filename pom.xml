@@ -51,6 +51,13 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
+  <modules>
+    <module>jaxdb</module>
+    <module>jaxsb</module>
+    <module>jetrs</module>
+    <module>jsonx</module>
+    <module>openjax</module>
+  </modules>
   <profiles>
     <profile>
       <id>tools.jar</id>
