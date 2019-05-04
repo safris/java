@@ -52,11 +52,12 @@
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
   <modules>
-    <module>jaxdb</module>
+    <module>openjax</module>
+    <module>libj</module>
     <module>jaxsb</module>
+    <module>jaxdb</module>
     <module>jetrs</module>
     <module>jsonx</module>
-    <module>openjax</module>
   </modules>
   <profiles>
     <profile>

@@ -10,6 +10,9 @@
 [submodule "jsonx"]
 	path = jsonx
 	url = https://github.com/jsonxorg/jsonx.git
+[submodule "libj"]
+	path = libj
+	url = https://github.com/libj/libj.git
 [submodule "openjax"]
 	path = openjax
 	url = https://github.com/openjax/openjax.git
