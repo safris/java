@@ -18,15 +18,15 @@ jdk:
 - oraclejdk8
 - oraclejdk11
 install:
-- cp settings.xml $HOME/.m2/settings.xml && rm -rf ~/.m2/repository/org/openjax && rm -rf ~/.m2/repository/org/jaxdb && rm -rf ~/.m2/repository/org/jaxsb && rm -rf ~/.m2/repository/org/jetrs && rm -rf ~/.m2/repository/org/jsonx
+- cp settings.xml $HOME/.m2/settings.xml && rm -rf ~/.m2/repository/org/openjax && rm -rf ~/.m2/repository/org/jaxdb && rm -rf ~/.m2/repository/org/jaxsb && rm -rf ~/.m2/repository/org/jetrs && rm -rf ~/.m2/repository/org/jsonx && rm -rf ~/.m2/repository/org/libj
 script:
 - 'if [ "$TRAVIS_JDK_VERSION" = "oraclejdk8" ] &&
       [ "$TRAVIS_BRANCH" = "master" ] &&
       [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
     sh -c "$SIGNING_KEY" | $GPG_EXECUTABLE --fast-import &> /dev/null &&
-    mvn -e -U -DskipRTests -pl openjax,jaxsb,jsonx,jaxdb,jetrs -amd deploy -P javadoc,deploy;
+    mvn -e -U -DskipRTests -pl openjax,libj,jaxsb,jaxdb,jetrs,jsonx -amd deploy -P javadoc,deploy;
   else
-    mvn -e -U -DskipRTests -pl openjax,jaxsb,jsonx,jaxdb,jetrs -amd install;
+    mvn -e -U -DskipRTests -pl openjax,libj,jaxsb,jaxdb,jetrs,jsonx -amd install;
   fi'
 cache:
   directories:
