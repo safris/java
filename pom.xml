@@ -519,8 +519,8 @@
           <version>0.1.0</version>
           <configuration>
             <sourceFileExcludes>
-              <sourceFileExclude>**/*_*_*/*.java</sourceFileExclude> <!-- Exclude JAXB sources -->
-              <sourceFileExclude>**/xAA.java</sourceFileExclude> <!-- Exclude JAXSB sources -->
+              <sourceFileExclude>**/*_*_*/*.java</sourceFileExclude> <!-- Exclude JAX-B sources -->
+              <sourceFileExclude>**/xAA.java</sourceFileExclude> <!-- Exclude JAX-SB sources -->
             </sourceFileExcludes>
           </configuration>
         </plugin>
