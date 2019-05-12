@@ -23,7 +23,7 @@
   <artifactId>rootpom</artifactId>
   <version>1.0.3</version>
   <packaging>pom</packaging>
-  <url>https://www.safris.org/</url>
+  <url>https://github.com/safrisorg/rootpom</url>
   <name>Root POM</name>
   <description>
     Root POM offering sonatype deployment, integration and regression test phases, and reporting.
@@ -32,6 +32,12 @@
     <name>Seva Safris</name>
     <url>https://www.safris.org/</url>
   </organization>
+  <scm>
+    <url>https://github.com/safrisorg/rootpom</url>
+    <connection>scm:git:https://github.com/safrisorg/rootpom.git</connection>
+    <developerConnection>scm:git:https://github.com/safrisorg/rootpom.git</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
   <licenses>
     <license>
       <name>The MIT License (MIT)</name>
