@@ -77,6 +77,17 @@
       </dependencyManagement>
     </profile>
     <profile>
+      <id>!argLine</id>
+      <activation>
+        <property>
+          <name>!argLine</name>
+        </property>
+      </activation>
+      <properties>
+        <argLine></argLine>
+      </properties>
+    </profile>
+    <profile>
       <id>maven.test.skip</id>
       <activation>
         <property>
@@ -210,7 +221,7 @@
                     <skipRTests>${skipRTests}</skipRTests>
                     <repoToken>${repoToken}</repoToken>
                   </properties>
-                  <mavenOpts>-Xbootclasspath/a:${settings.localRepository}/org/jacoco/org.jacoco.agent/${version.jacoco}/org.jacoco.agent-${version.jacoco}-runtime.jar -Djacoco-agent.destfile=${project.build.directory}/jacoco.exec</mavenOpts>
+                  <mavenOpts>-Xbootclasspath/a:${settings.localRepository}/org/jacoco/org.jacoco.agent/${version.jacoco}/org.jacoco.agent-${version.jacoco}-runtime.jar -Djacoco-agent.destfile=${project.build.directory}/jacoco.exec ${argLine}</mavenOpts>
                   <goals>
                     <goal>install</goal>
                   </goals>
