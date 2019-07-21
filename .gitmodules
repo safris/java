@@ -13,3 +13,6 @@
 [submodule "openjax"]
 	path = openjax
 	url = https://github.com/openjax/openjax.git
+[submodule "jsonx/java"]
+	path = jsonx/java
+	url = https://github.com/jsonx-org/java.git
