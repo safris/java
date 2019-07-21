@@ -24,9 +24,9 @@ script:
       [ "$TRAVIS_BRANCH" = "master" ] &&
       [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
     sh -c "$SIGNING_KEY" | $GPG_EXECUTABLE --fast-import &> /dev/null &&
-    mvn -e -U -DskipRTests -pl openjax,libj,jaxsb,jaxdb,jetrs,jsonx -amd deploy -P javadoc,deploy;
+    mvn -e -U -DskipRTests -pl openjax,libj,jaxsb,jaxdb,jetrs,jsonx/java -amd deploy -P javadoc,deploy;
   else
-    mvn -e -U -DskipRTests -pl openjax,libj,jaxsb,jaxdb,jetrs,jsonx -amd install;
+    mvn -e -U -DskipRTests -pl openjax,libj,jaxsb,jaxdb,jetrs,jsonx/java -amd install;
   fi'
 cache:
   directories:
