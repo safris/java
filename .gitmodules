@@ -7,9 +7,6 @@
 [submodule "jetrs"]
 	path = jetrs
 	url = https://github.com/jetrs/jetrs.git
-[submodule "jsonx"]
-	path = jsonx
-	url = https://github.com/jsonxorg/jsonx.git
 [submodule "libj"]
 	path = libj
 	url = https://github.com/libj/libj.git
