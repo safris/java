@@ -266,6 +266,7 @@
                   <goal>run</goal>
                 </goals>
                 <configuration>
+                  <skipInvocation>${skipTests}</skipInvocation>
                   <pom>pom.xml</pom>
                   <noLog>true</noLog>
                   <streamLogs>true</streamLogs>
@@ -747,7 +748,7 @@
       <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-core</artifactId>
-        <version>3.0.0</version>
+        <version>3.1.0</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
