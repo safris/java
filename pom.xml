@@ -1,5 +1,5 @@
 <!--
-  Copyright (c) 2019 Seva Safris
+  Copyright (c) 2019 OpenJAX
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
@@ -19,23 +19,23 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.safris.maven</groupId>
-  <artifactId>rootpom</artifactId>
+  <groupId>org.openjax</groupId>
+  <artifactId>root</artifactId>
   <version>1.0.5-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <url>https://github.com/safrisorg/rootpom</url>
+  <url>https://github.com/openjax/root</url>
   <name>Root POM</name>
   <description>
     Root POM offering sonatype deployment, integration and regression test phases, and reporting.
   </description>
   <organization>
-    <name>Seva Safris</name>
-    <url>https://www.safris.org/</url>
+    <name>OpenJAX</name>
+    <url>https://www.openjax.org/</url>
   </organization>
   <scm>
-    <url>https://github.com/safrisorg/rootpom</url>
-    <connection>scm:git:https://github.com/safrisorg/rootpom.git</connection>
-    <developerConnection>scm:git:https://github.com/safrisorg/rootpom.git</developerConnection>
+    <url>https://github.com/openjax/root</url>
+    <connection>scm:git:https://github.com/openjax/root.git</connection>
+    <developerConnection>scm:git:https://github.com/openjax/root.git</developerConnection>
     <tag>HEAD</tag>
   </scm>
   <licenses>
@@ -625,7 +625,6 @@
           <executions>
             <execution>
               <id>classes</id>
-              <phase>initialize</phase>
               <goals>
                 <goal>clean</goal>
               </goals>
