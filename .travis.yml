@@ -25,9 +25,9 @@ script:
       [ "$TRAVIS_BRANCH" = "master" ] &&
       [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
     eval "$SIGNING_KEY" &> /dev/null &&
-    mvn -e -U -s settings.xml -DskipRTests -pl openjax,libj,jaxsb,jaxdb,jetrs,jsonx/java -amd deploy -P javadoc,deploy;
+    mvn -e -U -B -s settings.xml -DskipRTests -pl openjax,libj,jaxsb,jaxdb,jetrs,jsonx/java -amd deploy -P javadoc,deploy;
   else
-    mvn -e -U -s settings.xml -DskipRTests -pl openjax,libj,jaxsb,jaxdb,jetrs,jsonx/java -amd install;
+    mvn -e -U -B -s settings.xml -DskipRTests -pl openjax,libj,jaxsb,jaxdb,jetrs,jsonx/java -amd install;
   fi'
 cache:
   directories:
