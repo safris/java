@@ -21,7 +21,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.openjax</groupId>
   <artifactId>root</artifactId>
-  <version>1.0.5</version>
+  <version>1.0.6-SNAPSHOT</version>
   <packaging>pom</packaging>
   <url>https://github.com/openjax/root</url>
   <name>Root POM</name>
@@ -698,7 +698,7 @@
         <plugin>
           <groupId>org.openjax.jaxb</groupId>
           <artifactId>jaxb-maven-plugin</artifactId>
-          <version>0.8.5</version>
+          <version>0.8.7-SNAPSHOT</version>
           <executions>
             <execution>
               <phase>generate-sources</phase>
@@ -711,7 +711,7 @@
         <plugin>
           <groupId>org.openjax.xml</groupId>
           <artifactId>xml-maven-plugin</artifactId>
-          <version>0.9.4</version>
+          <version>0.9.5-SNAPSHOT</version>
           <executions>
             <execution>
               <id>compile</id>
