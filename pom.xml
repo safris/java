@@ -221,6 +221,12 @@
                   <skipITs>${maven.test.skip}</skipITs>
                 </configuration>
               </execution>
+              <execution>
+                <id>integration-test-category</id>
+                <configuration>
+                  <skipITs>${maven.test.skip}</skipITs>
+                </configuration>
+              </execution>
             </executions>
           </plugin>
         </plugins>
@@ -246,6 +252,44 @@
                     <skipITs>${skipITests}</skipITs>
                   </configuration>
                 </execution>
+                <execution>
+                  <id>regression-test-category</id>
+                  <configuration>
+                    <skipITs>${skipITests}</skipITs>
+                  </configuration>
+                </execution>
+              </executions>
+            </plugin>
+          </plugins>
+        </pluginManagement>
+      </build>
+    </profile>
+    <profile>
+      <id>skipRTests</id>
+      <activation>
+        <property>
+          <name>skipRTests</name>
+        </property>
+      </activation>
+      <build>
+        <pluginManagement>
+          <plugins>
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-failsafe-plugin</artifactId>
+              <executions>
+                <execution>
+                  <id>regression-test</id>
+                  <configuration>
+                    <skipITs>true</skipITs>
+                  </configuration>
+                </execution>
+                <execution>
+                  <id>regression-test-category</id>
+                  <configuration>
+                    <skipITs>true</skipITs>
+                  </configuration>
+                </execution>
               </executions>
             </plugin>
           </plugins>
@@ -269,6 +313,18 @@
                   <detectGeneratedSourcePaths>true</detectGeneratedSourcePaths>
                   <detectOfflineLinks>false</detectOfflineLinks>
                   <quiet>true</quiet>
+                  <tags>
+                    <tag>
+                      <name>complexity</name>
+                      <placement>a</placement>
+                      <head>Complexity</head>
+                    </tag>
+                    <tag>
+                      <name>amortized</name>
+                      <placement>a</placement>
+                      <head>Amortized</head>
+                    </tag>
+                  </tags>
                 </configuration>
               </execution>
             </executions>
@@ -533,10 +589,6 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-failsafe-plugin</artifactId>
-        <configuration>
-          <skipITs>true</skipITs>
-          <trimStackTrace>false</trimStackTrace>
-        </configuration>
         <executions>
           <execution>
             <id>integration-test</id>
@@ -554,6 +606,26 @@
               <excludes>
                 <exclude></exclude> <!-- This is necessary for inner classes to be run -->
               </excludes>
+              <excludedGroups>org.libj.test.IntegrationTest</excludedGroups>
+              <excludedGroups>org.libj.test.RegressionTest</excludedGroups>
+            </configuration>
+          </execution>
+          <execution>
+            <id>integration-test-category</id>
+            <goals>
+              <goal>integration-test</goal>
+              <goal>verify</goal>
+            </goals>
+            <phase>integration-test</phase>
+            <configuration>
+              <includes>
+                <include>**/*Test</include>
+              </includes>
+              <excludes>
+                <exclude></exclude> <!-- This is necessary for inner classes to be run -->
+              </excludes>
+              <groups>org.libj.test.IntegrationTest</groups>
+              <excludedGroups>org.libj.test.RegressionTest</excludedGroups>
             </configuration>
           </execution>
           <execution>
@@ -572,6 +644,26 @@
               <excludes>
                 <exclude></exclude> <!-- This is necessary for inner classes to be run -->
               </excludes>
+              <excludedGroups>org.libj.test.RegressionTest</excludedGroups>
+              <excludedGroups>org.libj.test.IntegrationTest</excludedGroups>
+            </configuration>
+          </execution>
+          <execution>
+            <id>regression-test-category</id>
+            <goals>
+              <goal>integration-test</goal>
+              <goal>verify</goal>
+            </goals>
+            <phase>verify</phase>
+            <configuration>
+              <includes>
+                <include>**/*Test</include>
+              </includes>
+              <excludes>
+                <exclude></exclude> <!-- This is necessary for inner classes to be run -->
+              </excludes>
+              <groups>org.libj.test.RegressionTest</groups>
+              <excludedGroups>org.libj.test.IntegrationTest</excludedGroups>
             </configuration>
           </execution>
         </executions>
@@ -678,12 +770,17 @@
               <exclude>**/*RegressionTest</exclude>
               <exclude>**/*RegressionTestCase</exclude>
             </excludes>
+            <excludedGroups>org.libj.test.IntegrationTest</excludedGroups>
+            <excludedGroups>org.libj.test.RegressionTest</excludedGroups>
           </configuration>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-failsafe-plugin</artifactId>
           <version>2.22.1</version>
+          <configuration>
+            <trimStackTrace>false</trimStackTrace>
+          </configuration>
         </plugin>
         <plugin>
           <groupId>org.jacoco</groupId>
